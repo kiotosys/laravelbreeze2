@@ -6,10 +6,10 @@ use App\Http\Controllers\PagesController;
 
 
 Route::get('/', [PagesController::class, 'fnIndex']) ->name('xInicio');
-
 Route::get('/lista', [PagesController::class, 'fnLista']) ->name('xLista');
-
 Route::get('/galeria/{numero?}', [PagesController::class, 'fnGaleria']) -> where('numero', '[0-9]+')  ->name('xGaleria');
+
+//Route::get('/detalle/{id}', [PagesController::class, 'fnLista']) ->name('xLista');
 
 /*
 Route::get('/', function () {
@@ -25,7 +25,7 @@ Route::get('/galeria/{numero?}', function ($numero=null) {
     return "Este es el codigo de la foto".$numero;
 }) -> where('numero', '[0-9]+');
 */
-
+/*
 Route::view('/galeria', 'pagGaleria', ['valor' => 15]) -> name('xGaleria');
 
 
@@ -33,7 +33,7 @@ Route::get('/lista', function () {
     return view('pagLista');
 }) -> name('xLista');
 
-
+*/
 
 Route::get('/dashboard', function () {
     return view('dashboard');
