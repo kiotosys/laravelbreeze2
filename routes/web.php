@@ -4,12 +4,19 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 
-
+//PORTADA
 Route::get('/', [PagesController::class, 'fnIndex']) ->name('xInicio');
-Route::get('/lista', [PagesController::class, 'fnLista']) ->name('xLista');
-Route::get('/galeria/{numero?}', [PagesController::class, 'fnGaleria']) -> where('numero', '[0-9]+')  ->name('xGaleria');
 
-//Route::get('/detalle/{id}', [PagesController::class, 'fnLista']) ->name('xLista');
+//CREATE
+Route::post('/', [PagesController::class, 'fnRegistrar']) -> name('Estudiante.xRegistrar');
+
+//READ
+Route::get('/lista',        [PagesController::class, 'fnLista'])->name('xLista');
+Route::get('/detalle/{id}', [PagesController::class, 'fnEstDetalle'])->name('Estudiante.xDetalle');
+
+
+
+Route::get('/galeria/{numero?}', [PagesController::class, 'fnGaleria']) -> where('numero', '[0-9]+')  ->name('xGaleria');
 
 /*
 Route::get('/', function () {
